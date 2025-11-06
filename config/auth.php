@@ -36,9 +36,24 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        'remin' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'remin',
+        ],
+        'pimpinan' => [
+            'driver' => 'session',
+            'provider' => 'pimpinan',
+        ],
+    ],
+
+    'providers' => [
+        'remin' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Remin::class,
+        ],
+        'pimpinan' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Pimpinan::class,
         ],
     ],
 
